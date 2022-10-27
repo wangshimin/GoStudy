@@ -1,0 +1,1 @@
+本目录代码搬运自 [极客时间《Go语言核心36讲》](https://github.com/hyper0x/Golang_Puzzlers) ，加注释以备学习。

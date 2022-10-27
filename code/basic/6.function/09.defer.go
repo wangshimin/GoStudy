@@ -9,7 +9,12 @@ type point struct {
 }
 
 func main() {
-	/*************************** defer 析构函数 **********************/
+	// example1()
+	// example2()
+	example3()
+}
+
+func example1() {
 	for i := 0; i < 3; i++ {
 		c := i + 10 //	声明并赋值变量c
 		e := i * 3
@@ -37,17 +42,32 @@ func main() {
 	defer func() {
 		fmt.Println("one")
 	}()
+}
 
-	// var fs = [4]func(){}
+func example2() {
+	var fs = [4]func(){}
 
-	// for i := 0; i < 4; i++ {
-	// 	defer fmt.Println("defer i = ", i)
-	// 	defer func() { fmt.Println("defer_closure i = ", i) }()
-	// 	fs[i] = func() { fmt.Println("closure i = ", i) }
-	// }
+	for i := 0; i < 4; i++ {
+		defer fmt.Println("defer i = ", i)
+		defer func() { fmt.Println("defer_closure i = ", i) }()
+		fs[i] = func() { fmt.Println("closure i = ", i) }
+	}
 
-	// for _, f := range fs {
-	// 	f()
-	// }
+	for _, f := range fs {
+		f()
+	}
+}
 
+func example3() {
+	fmt.Println("defer begin")
+
+	// 将defer放入延迟调用栈
+	defer fmt.Println(1)
+
+	defer fmt.Println(2)
+
+	// 最后一个放入，位于栈顶，最先调用
+	defer fmt.Println(3)
+
+	fmt.Println("defer end")
 }
