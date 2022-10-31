@@ -1,4 +1,11 @@
-// 函数体实现接口
+/*
+ * @Descripttion : 函数体实现接口
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-27 16:09:45
+ * @LastEditors  :
+ * @LastEditTime : 2022-10-28 15:17:13
+ */
 package main
 
 import "fmt"

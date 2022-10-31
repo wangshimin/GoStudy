@@ -1,4 +1,11 @@
-// 结构体实现接口
+/*
+ * @Descripttion :结构体实现接口
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-27 15:53:36
+ * @LastEditors  :
+ * @LastEditTime : 2022-10-28 15:16:32
+ */
 package main
 
 import "fmt"

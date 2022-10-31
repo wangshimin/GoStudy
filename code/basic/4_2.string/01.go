@@ -1,4 +1,12 @@
 /*
+ * @Descripttion :
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-12 11:58:27
+ * @LastEditors  :
+ * @LastEditTime : 2022-10-31 13:06:10
+ */
+/*
 string 字符串
 */
 package main
@@ -13,7 +21,7 @@ type point struct {
 	x, y int
 }
 
-func main() {
+func exampleFunction() {
 	var str string = "Hello,world!"
 
 	// HasPrefix() \ HasSuffix()
@@ -43,7 +51,9 @@ func main() {
 	fmt.Printf("拼接后：%v \n", sj)
 
 	fmt.Printf("长度为：%d 字节\n", len(str))
+}
 
+func exampleFormat() {
 	/************ 格式化字符串 *****************/
 	p := point{1, 2}
 	fmt.Printf("%v\n", p)

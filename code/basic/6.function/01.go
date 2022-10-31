@@ -1,3 +1,11 @@
+/*
+ * @Descripttion : 匿名函数
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-27 15:13:06
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2022-10-31 12:54:58
+ */
 package main
 
 import (

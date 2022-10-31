@@ -1,3 +1,12 @@
+/*
+ * @Descripttion : 析构函数 defer
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-12 11:58:27
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2022-10-31 12:26:45
+ */
+
 package main
 
 import (
@@ -14,6 +23,7 @@ func main() {
 	example3()
 }
 
+// 知识点：匿名函数、闭包
 func example1() {
 	for i := 0; i < 3; i++ {
 		c := i + 10 //	声明并赋值变量c
@@ -48,9 +58,9 @@ func example2() {
 	var fs = [4]func(){}
 
 	for i := 0; i < 4; i++ {
-		defer fmt.Println("defer i = ", i)
-		defer func() { fmt.Println("defer_closure i = ", i) }()
-		fs[i] = func() { fmt.Println("closure i = ", i) }
+		defer fmt.Println("defer i = ", i)                      // 赋值
+		defer func() { fmt.Println("defer_closure i = ", i) }() //	闭包 4
+		fs[i] = func() { fmt.Println("closure i = ", i) }       //	闭包 4
 	}
 
 	for _, f := range fs {
