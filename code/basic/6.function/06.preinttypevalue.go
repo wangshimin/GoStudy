@@ -1,4 +1,11 @@
-// 示例：遍历可变参数列表 - 获取每一个参数的值
+/*
+ * @Descripttion : 示例：遍历可变参数列表 - 获取每一个参数的值
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-27 16:56:21
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2022-10-31 17:44:45
+ */
 package main
 
 import (
@@ -61,11 +68,25 @@ func printTypeValue(slist ...interface{}) string {
 	return b.String()
 }
 
-func main() {
+func example2() {
 	// 输入3个字符串，将它们连成一个字符串
 	fmt.Println(joinStrings("pig ", "and", " rat"))
 	fmt.Println(joinStrings("hammer", " mom", " and ", "hawk"))
 
 	// 将不同类型的变量通过printTypeValue()打印出来
 	fmt.Println(printTypeValue(100, "str", true))
+}
+
+func example1() {
+	printInts := func(list ...int) {
+		for _, v := range list {
+			fmt.Printf("%d\n", v)
+		}
+	}
+	printInts(2, 3, 4, 5, 6)
+}
+
+func main() {
+	example1()
+	// example2()
 }

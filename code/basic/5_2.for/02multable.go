@@ -4,11 +4,14 @@
  * @Author       :
  * @Date         : 2022-10-27 12:00:37
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2022-10-31 12:58:37
+ * @LastEditTime : 2022-11-02 16:22:07
  */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 /**
  * @Descripttion: For循环实现
@@ -49,6 +52,15 @@ func exapleFunction() {
 }
 
 func main() {
+	start := time.Now()
 	exampleFor()
+	end := time.Now()
+	delta1 := end.Sub(start)
+
+	start2 := time.Now()
 	exapleFunction()
+	end2 := time.Now()
+	delta2 := end2.Sub(start2)
+
+	fmt.Printf("exampleFor()耗时 %s \nexapleFunction()耗时 %s 5", delta1, delta2)
 }
