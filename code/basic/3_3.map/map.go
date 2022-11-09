@@ -1,3 +1,11 @@
+/*
+ * @Descripttion :
+ * @version      :
+ * @Author       :
+ * @Date         : 2022-10-12 11:58:27
+ * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2022-11-09 14:01:47
+ */
 package main
 
 import (
@@ -5,13 +13,13 @@ import (
 	"sort"
 )
 
+// 语法 var map1 map[keyType]valueType
 func main() {
-	/******************* map **************************/
-	// m := make(map[int]string)
-	// m[1] = "ok"
-	// m[8] = "yes"
-	// delete(m, 1)
-	// fmt.Println(m, m[1], m[0])
+	m := make(map[int]string)
+	m[1] = "ok"
+	m[8] = "yes"
+	delete(m, 1)
+	fmt.Println(m, m[1], m[0])
 
 	// sm := make([]map[int]string, 5)
 	// for i := range sm {
@@ -39,5 +47,14 @@ func main() {
 	}
 	sort.Ints(s)
 	fmt.Println(s)
+
+	// 判断键值对是否存在
+	m3 := map[string]int{"Shanghai": 10, "Beijing": 20}
+	value, isset := m3["Shanghai"]
+	fmt.Println(value, isset)
+	if _, ok := m3["Guangzhou"]; !ok {
+		m3["Guangzhou"] = 30
+	}
+	fmt.Println(m3)
 
 }
