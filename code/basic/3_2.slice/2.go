@@ -4,7 +4,7 @@
  * @Author       :
  * @Date         : 2022-11-08 19:16:42
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2022-11-08 19:26:18
+ * @LastEditTime : 2022-11-09 16:18:15
  */
 package main
 
@@ -25,7 +25,29 @@ func splitString() {
 	}
 }
 
+func example() {
+	// string底层是一个byte数组，因此string也可以进行切片处理
+	str := "hello@world"
+	s := str[6:]
+	fmt.Println("slice=", s)
+	// 如果需要修改字符串，可以先将string 转换为 ([]byte / []rune)进行修改，再通过string转化为字符串
+	arr1 := []byte(s)
+	arr1[0] = 'z'
+	s = string(arr1)
+	fmt.Println("str=", s)
+
+	// 细节，我们转成[]byte后，可以处理英文和数字，但是不能处理中文
+	// 原因是 []byte 字节来处理，而一个汉字，是3个字节，因此就会出现乱码
+	// 解决方法：将string转成[]rune 即可，因为[]rune是按字符处理，兼容汉字
+	arr2 := []rune(str)
+	fmt.Print(arr2)
+	arr2[0] = '哈'
+	s = string(arr2)
+	fmt.Println("str=", s)
+
+}
+
 func main() {
 	splitString()
-
+	example()
 }
